@@ -10,13 +10,13 @@ export const Content = () => {
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     getAllArticles()
       .then(({ articles }) => {
         setArticleList(articles);
         setIsLoading(false);
       })
       .catch((err) => {
-        console.log(err);
         setIsError(true);
       });
   }, []);

@@ -1,5 +1,7 @@
-const baseUrl = 'https://jy-news.onrender.com/api';
+import axios from 'axios';
+
+const api = axios.create({ baseURL: 'https://jy-news.onrender.com/api' });
 
 export const getAllArticles = () => {
-  return fetch(`${baseUrl}/articles`).then((response) => response.json());
+  return api.get(`/articles`).then((res) => res.data);
 };
