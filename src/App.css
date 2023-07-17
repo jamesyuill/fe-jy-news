@@ -54,3 +54,27 @@ li{
 .article-card img{
   width:7rem;
 }
+
+.article-full{
+  background-color:rgb(245, 245, 245);
+}
+
+.article-full h2{
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+
+.article-full img{
+  width:35rem;
+}
+
+
+.comments-comp{
+  border: 2px solid orange;
+  background-color: rgb(245, 245, 245);;
+}
+
+.votes-comp{
+  border: 2px solid black;
+  background-color: rgb(245, 245, 245);;
+}

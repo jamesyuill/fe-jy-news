@@ -1,7 +1,7 @@
-export const CommentsComp = () => {
+export const CommentsComp = ({ article: { article_id, comment_count } }) => {
   return (
     <div className="comments-comp">
-      <h2>comments comp</h2>
+      <p>Comments: {comment_count}</p>
     </div>
   );
 };

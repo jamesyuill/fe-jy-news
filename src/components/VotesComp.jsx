@@ -1,3 +1,7 @@
-export const VotesComp = () => {
-  return <h2>votes comp</h2>;
+export const VotesComp = ({ article: { votes } }) => {
+  return (
+    <div className="votes-comp">
+      <p>Votes: {votes}</p>
+    </div>
+  );
 };
