@@ -2,7 +2,7 @@ import { ArticleCard } from '../components/ArticleCard';
 
 export const ArticleList = ({ articleList }) => {
   return (
-    <div className="article-list">
+    <article className="article-list">
       <h2>Article List</h2>
       <ul>
         {articleList.map((article) => {
@@ -13,6 +13,6 @@ export const ArticleList = ({ articleList }) => {
           );
         })}
       </ul>
-    </div>
+    </article>
   );
 };

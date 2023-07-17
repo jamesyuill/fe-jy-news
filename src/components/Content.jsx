@@ -6,12 +6,28 @@ import { getAllArticles } from '../utils/api';
 
 export const Content = () => {
   const [articleList, setArticleList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    getAllArticles().then(({ articles }) => {
-      setArticleList(articles);
-    });
+    getAllArticles()
+      .then(({ articles }) => {
+        setArticleList(articles);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsError(true);
+      });
   }, []);
+
+  if (isLoading) {
+    return <p>loading...</p>;
+  }
+
+  if (isError) {
+    return <p>Something went wrong...</p>;
+  }
 
   return (
     <main className="content">
