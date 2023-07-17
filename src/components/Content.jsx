@@ -10,10 +10,7 @@ export const Content = () => {
     fetch('https://jy-news.onrender.com/api/articles')
       .then((response) => response.json())
       .then(({ articles }) => {
-        setArticleList((curr) => {
-          let allArticles = [...curr, articles];
-          return allArticles;
-        });
+        setArticleList(articles);
       });
   }, []);
 
