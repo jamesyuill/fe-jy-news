@@ -2,16 +2,15 @@ import { Route, Routes } from 'react-router-dom';
 import { ArticleList } from '../pages/ArticleList';
 import { MostRecentArticles } from '../pages/MostRecentArticles';
 import { useEffect, useState } from 'react';
+import { getAllArticles } from '../utils/api';
 
 export const Content = () => {
   const [articleList, setArticleList] = useState([]);
 
   useEffect(() => {
-    fetch('https://jy-news.onrender.com/api/articles')
-      .then((response) => response.json())
-      .then(({ articles }) => {
-        setArticleList(articles);
-      });
+    getAllArticles().then(({ articles }) => {
+      setArticleList(articles);
+    });
   }, []);
 
   return (

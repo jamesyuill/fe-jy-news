@@ -1,7 +1,6 @@
 import { ArticleCard } from '../components/ArticleCard';
 
 export const ArticleList = ({ articleList }) => {
-  console.log(articleList);
   return (
     <div className="article-list">
       <h2>Article List</h2>
