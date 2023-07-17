@@ -38,7 +38,17 @@ export const Content = () => {
           path="/articles"
           element={<ArticleList articleList={articleList} />}
         />
-        <Route path="/articles/:article_id" element={<ArticlePage />} />
+        <Route
+          path="/articles/:article_id"
+          element={
+            <ArticlePage
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
+              isError={isError}
+              setIsError={setIsError}
+            />
+          }
+        />
       </Routes>
     </main>
   );

@@ -56,7 +56,15 @@ li{
 }
 
 .article-full{
+  display: flex;
+  flex-direction: column;
+  
   background-color:rgb(245, 245, 245);
+  padding-left:1rem;
+  padding-right:1rem;
+  
+  border:1px solid black;
+  
 }
 
 .article-full h2{
@@ -65,16 +73,20 @@ li{
 }
 
 .article-full img{
-  width:35rem;
+  margin-top: 0.5rem;
+  width:100%;
+  align-self: center;
 }
 
 
 .comments-comp{
+  margin-top: 1rem;
   border: 2px solid orange;
   background-color: rgb(245, 245, 245);;
 }
 
 .votes-comp{
+  margin-top: 1rem;
   border: 2px solid black;
   background-color: rgb(245, 245, 245);;
 }

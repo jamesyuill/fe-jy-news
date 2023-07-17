@@ -11,6 +11,8 @@ export const ArticleFull = ({
     votes,
   },
 }) => {
+  const publishedAt = created_at;
+
   return (
     <article className="article-full">
       <img src={article_img_url} alt={title} />
@@ -18,7 +20,7 @@ export const ArticleFull = ({
       <p>By {author}</p>
       <p>{body}</p>
       <p>Topic: {topic}</p>
-      <p>Published: {created_at}</p>
+      <p>Published: {publishedAt}</p>
     </article>
   );
 };
