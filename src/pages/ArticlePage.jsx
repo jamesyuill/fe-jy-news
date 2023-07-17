@@ -4,7 +4,8 @@ import { CommentsComp } from '../components/CommentsComp';
 import { useEffect, useState } from 'react';
 import { getArticleById } from '../utils/api';
 import { VotesComp } from '../components/VotesComp';
-
+import formatDateTime from '../utils/formatDateTime';
+let dateAndTime;
 export const ArticlePage = ({
   isLoading,
   setIsLoading,
@@ -20,6 +21,7 @@ export const ArticlePage = ({
       .then(({ article }) => {
         setIsLoading(false);
         setArticle(article);
+        dateAndTime = formatDateTime(article.created_at);
       })
       .catch((err) => {
         setIsError(true);
@@ -36,7 +38,7 @@ export const ArticlePage = ({
 
   return (
     <article className="article-page">
-      <ArticleFull article={article} />
+      <ArticleFull article={article} dateAndTime={dateAndTime} />
       <VotesComp article={article} />
       <CommentsComp article={article} />
     </article>
