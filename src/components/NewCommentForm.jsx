@@ -1,31 +1,79 @@
 import { useState } from 'react';
+import { postNewComment } from '../utils/api';
 
-export const NewCommentForm = () => {
+export const NewCommentForm = ({ article_id, setComments }) => {
   const [newComment, setNewComment] = useState({
-    username: '',
+    username: 'tickle122',
     body: '',
   });
+  const [badInput, setBadInput] = useState(false);
+  const [isPostError, setIsPostError] = useState(false);
 
   const updateFormField = (field, value) => {
     setNewComment((curr) => ({ ...curr, [field]: value }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (newComment.username === '' || newComment.body === '') {
+      setBadInput(true);
+    } else {
+      setBadInput(false);
+      setComments((current) => {
+        const timeNow = new Date();
+        const newObj = {
+          comment_id: current.length + 1,
+          body: newComment.body,
+          article_id: article_id,
+          author: newComment.username,
+          votes: 0,
+          created_at: timeNow,
+        };
+
+        return [newObj, ...current];
+      });
+      postNewComment(article_id, newComment)
+        .then((res) => {
+          setIsPostError(false);
+          setNewComment({ username: '', body: '' });
+          console.log(res);
+        })
+        .catch((err) => {
+          setIsPostError(true);
+        });
+    }
+  };
+
   return (
-    <form className="new-comment-form">
+    <form className="new-comment-form" onSubmit={handleSubmit}>
       <label htmlFor="username">Username: </label>
       <input
         type="text"
         id="username"
         value={newComment.username}
-        onChange={(e) => updateFormField('username', e.target.value)}
+        onChange={(e) => {
+          setBadInput(false);
+          updateFormField('username', e.target.value);
+        }}
       />
       <label htmlFor="comment-textarea">Comment: </label>
       <textarea
         id="comment-textarea"
         maxLength={150}
         value={newComment.body}
-        onChange={(e) => updateFormField('body', e.target.value)}
+        onChange={(e) => {
+          setBadInput(false);
+          updateFormField('body', e.target.value);
+        }}
       />
+      {badInput ? (
+        <p className="error-class">failed to post: there was an empty field</p>
+      ) : null}
+
+      {isPostError ? (
+        <p className="error-class">failed to post: apologies try again later</p>
+      ) : null}
       <button>Submit!</button>
     </form>
   );

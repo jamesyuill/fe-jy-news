@@ -20,9 +20,7 @@ export const ArticleCard = ({
       </Link>
       <img src={article_img_url} alt={title} />
       <p>Topic: {topic}</p>
-      <p>
-        Published at: {dateAndTime.time} - {dateAndTime.date}
-      </p>
+      <p>Published on: {dateAndTime.date}</p>
       <p>Comment count: {comment_count}</p>
     </div>
   );

@@ -23,9 +23,7 @@ export const ArticleFull = ({
       <p>
         Topic: <span className="article-topic">{topic}</span>
       </p>
-      <p className="time-date">
-        Published: {dateAndTime.time} - {dateAndTime.date}
-      </p>
+      <p className="time-date">Published on: {dateAndTime.date}</p>
     </article>
   );
 };

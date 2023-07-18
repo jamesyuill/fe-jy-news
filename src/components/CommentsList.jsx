@@ -38,7 +38,7 @@ export const CommentsList = ({ article_id }) => {
 
       <ul>
         <li key="newcommentform">
-          <NewCommentForm />
+          <NewCommentForm article_id={article_id} setComments={setComments} />
         </li>
         {comments.map((comment) => {
           return (
