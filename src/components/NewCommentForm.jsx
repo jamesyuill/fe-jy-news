@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { postNewComment } from '../utils/api';
+import { UserContext } from '../contexts/User';
 
 export const NewCommentForm = ({ article_id, setComments }) => {
+  const { user, setUser } = useContext(UserContext);
+
   const [newComment, setNewComment] = useState({
-    username: 'tickle122',
+    username: user,
     body: '',
   });
   const [badInput, setBadInput] = useState(false);
@@ -41,6 +44,10 @@ export const NewCommentForm = ({ article_id, setComments }) => {
         })
         .catch((err) => {
           setIsPostError(true);
+          setComments((curr) => {
+            const newCommentList = [...curr];
+            return newCommentList.shift();
+          });
         });
     }
   };
