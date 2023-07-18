@@ -41,7 +41,7 @@ export const ArticlePage = ({
     <article className="article-page">
       <ArticleFull article={article} dateAndTime={dateAndTime} />
       <VotesComp article={article} />
-      <CommentsComp article={article} />
+      <CommentsComp article_id={article_id} />
     </article>
   );
 };

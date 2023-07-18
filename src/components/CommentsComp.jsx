@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { getCommentsByArticleId } from '../utils/api';
 import { CommentCard } from './CommentCard';
 
-export const CommentsComp = ({ article: { article_id, comment_count } }) => {
+export const CommentsComp = ({ article_id }) => {
   const [comments, setComments] = useState([]);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -29,7 +29,7 @@ export const CommentsComp = ({ article: { article_id, comment_count } }) => {
 
   return (
     <div className="comments-comp">
-      <p>Comments: {comment_count}</p>
+      <p>Comments: {comments.length}</p>
       <ul>
         {comments.map((comment) => {
           return (
