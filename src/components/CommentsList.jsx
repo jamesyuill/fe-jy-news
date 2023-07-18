@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { getCommentsByArticleId } from '../utils/api';
 import { CommentCard } from './CommentCard';
 
-export const CommentsComp = ({ article_id }) => {
+export const CommentsList = ({ article_id }) => {
   const [comments, setComments] = useState([]);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -25,6 +25,10 @@ export const CommentsComp = ({ article_id }) => {
 
   if (isLoading) {
     return <p>Loading...</p>;
+  }
+
+  if (comments.length === 0) {
+    return <p>Be the first to comment!</p>;
   }
 
   return (
