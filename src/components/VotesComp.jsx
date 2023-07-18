@@ -1,18 +1,23 @@
 import { useState } from 'react';
+import { patchVotesByArticleId } from '../utils/api';
 
-export const VotesComp = ({ article: { votes } }) => {
-  const [updateVote, setUpdateVote] = useState(votes);
+export const VotesComp = ({ article: { article_id, votes } }) => {
+  const [voteClicks, setVoteClicks] = useState(0);
+  const [articleVotes, setArticleVotes] = useState(votes);
 
   function handleClick(num) {
-    // e.preventDefault();
-    setUpdateVote((curr) => {
-      return (curr += num);
+    setVoteClicks((curr) => {
+      return curr + num;
+    });
+
+    patchVotesByArticleId(article_id, num).then((res) => {
+      console.log(res);
     });
   }
 
   return (
     <div className="votes-comp">
-      <p>Votes: {updateVote}</p>
+      <p>Votes: {voteClicks + votes}</p>
       <button
         onClick={() => {
           handleClick(1);

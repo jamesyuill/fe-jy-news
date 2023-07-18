@@ -9,3 +9,9 @@ export const getAllArticles = () => {
 export const getArticleById = (article_id) => {
   return api.get(`/articles/${article_id}`).then((res) => res.data);
 };
+
+export const patchVotesByArticleId = (article_id, newVote) => {
+  return api
+    .patch(`/articles/${article_id}`, { inc_votes: newVote })
+    .then((res) => res.data);
+};
