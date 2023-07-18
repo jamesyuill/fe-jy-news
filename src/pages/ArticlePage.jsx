@@ -20,6 +20,7 @@ export const ArticlePage = ({
     getArticleById(article_id)
       .then(({ article }) => {
         setIsLoading(false);
+        setIsError(false);
         setArticle(article);
         setDateAndTime(formatDateTime(article.created_at));
       })

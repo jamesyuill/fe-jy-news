@@ -16,9 +16,13 @@ export const ArticleFull = ({
     <article className="article-full">
       <img src={article_img_url} alt={title} />
       <h2>{title}</h2>
-      <p>By {author}</p>
+      <p>
+        By <span className="article-author">{author}</span>
+      </p>
       <p>{body}</p>
-      <p>Topic: {topic}</p>
+      <p>
+        Topic: <span className="article-topic">{topic}</span>
+      </p>
       <p className="time-date">
         Published: {dateAndTime.time} - {dateAndTime.date}
       </p>
