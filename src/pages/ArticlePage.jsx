@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { getArticleById } from '../utils/api';
 import { VotesComp } from '../components/VotesComp';
 import formatDateTime from '../utils/formatDateTime';
-let dateAndTime;
+
 export const ArticlePage = ({
   isLoading,
   setIsLoading,
@@ -13,7 +13,7 @@ export const ArticlePage = ({
   setIsError,
 }) => {
   const [article, setArticle] = useState({});
-
+  const [dateAndTime, setDateAndTime] = useState({});
   const { article_id } = useParams();
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export const ArticlePage = ({
       .then(({ article }) => {
         setIsLoading(false);
         setArticle(article);
-        dateAndTime = formatDateTime(article.created_at);
+        setDateAndTime(formatDateTime(article.created_at));
       })
       .catch((err) => {
         setIsError(true);
