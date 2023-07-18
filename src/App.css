@@ -64,7 +64,7 @@ li{
   padding-right:1rem;
   
   border:1px solid black;
-  
+  color:black;
 }
 
 .article-full h2{
@@ -73,9 +73,17 @@ li{
 }
 
 .article-full img{
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   width:100%;
   align-self: center;
+}
+
+.article-topic{
+  font-weight: 600;
+}
+
+.article-author{
+  font-weight: 700;
 }
 
 .time-date{
@@ -85,12 +93,39 @@ li{
 
 .comments-comp{
   margin-top: 1rem;
-  border: 2px solid orange;
-  background-color: rgb(245, 245, 245);;
+  border: 1px solid orange;
+  background-color: rgb(245, 245, 245);
+  padding-left:1rem;
+  padding-right:1rem;
+  color:black;
+
+}
+
+.comment-card{
+  background-color:rgb(245, 245, 245);
+  padding-left:1rem;
+  padding-right:1rem;
+  margin:1rem;
+  border:1px solid black;
+  color:black;
+}
+
+.comment-author{
+  font-weight: 700;
+}
+
+.comment-votes{
+  font-weight: 500;
 }
 
 .votes-comp{
   margin-top: 1rem;
-  border: 2px solid black;
-  background-color: rgb(245, 245, 245);;
+
+  border: 1px solid black;
+  background-color: rgb(245, 245, 245);
+  text-align: center;
+  padding-left:1rem;
+  padding-right:1rem;
+  padding-bottom: 1rem;
+  color:black;
 }
