@@ -14,12 +14,14 @@ export const VotesComp = ({ article: { article_id, votes } }) => {
 
     patchVotesByArticleId(article_id, num)
       .then((res) => {
+        setIsError(false);
         console.log(res); //<--i will remove, but thought i should leave in so you could see it working
       })
       .catch((err) => {
         setVoteClicks((curr) => {
           return curr - num;
         });
+        setIsError(true);
       });
   }
 
