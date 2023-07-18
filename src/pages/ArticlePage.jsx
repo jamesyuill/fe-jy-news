@@ -26,7 +26,7 @@ export const ArticlePage = ({
       .catch((err) => {
         setIsError(true);
       });
-  }, []);
+  }, [article_id]);
 
   if (isLoading) {
     return <p>loading...</p>;
