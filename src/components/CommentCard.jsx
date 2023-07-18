@@ -14,9 +14,7 @@ export const CommentCard = ({
       <p>
         Votes: <span className="comment-votes">{votes}</span>
       </p>
-      <p className="time-date">
-        Published at: {dateAndTime.time} - {dateAndTime.date}
-      </p>
+      <p className="time-date">Published on: {dateAndTime.date}</p>
     </article>
   );
 };
