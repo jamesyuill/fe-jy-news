@@ -3,6 +3,7 @@ import { ArticleList } from '../pages/ArticleList';
 import { MostRecentArticles } from '../pages/MostRecentArticles';
 import { useEffect, useState } from 'react';
 import { getAllArticles } from '../utils/api';
+import { ArticlePage } from '../pages/ArticlePage';
 
 export const Content = () => {
   const [articleList, setArticleList] = useState([]);
@@ -31,13 +32,22 @@ export const Content = () => {
 
   return (
     <main className="content">
-      <h2>content</h2>
-
       <Routes>
         <Route path="/" element={<MostRecentArticles />} />
         <Route
           path="/articles"
           element={<ArticleList articleList={articleList} />}
+        />
+        <Route
+          path="/articles/:article_id"
+          element={
+            <ArticlePage
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
+              isError={isError}
+              setIsError={setIsError}
+            />
+          }
         />
       </Routes>
     </main>
