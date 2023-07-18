@@ -11,16 +11,22 @@ export const NewCommentForm = ({ article_id, setComments }) => {
   });
   const [badInput, setBadInput] = useState(false);
   const [isPostError, setIsPostError] = useState(false);
+  const [isUser, setIsUser] = useState(true);
+  const [successfulPost, setSuccessfulPost] = useState(false);
+  const [buttonClicked, setButtonClicked] = useState(false);
 
   const updateFormField = (field, value) => {
     setNewComment((curr) => ({ ...curr, [field]: value }));
   };
 
   const handleSubmit = (e) => {
+    setButtonClicked(true);
     e.preventDefault();
 
     if (newComment.username === '' || newComment.body === '') {
       setBadInput(true);
+    } else if (newComment.username !== user) {
+      setIsUser(false);
     } else {
       setBadInput(false);
       setComments((current) => {
@@ -40,6 +46,7 @@ export const NewCommentForm = ({ article_id, setComments }) => {
         .then((res) => {
           setIsPostError(false);
           setNewComment({ username: '', body: '' });
+          setSuccessfulPost(true);
           console.log(res);
         })
         .catch((err) => {
@@ -74,6 +81,8 @@ export const NewCommentForm = ({ article_id, setComments }) => {
           updateFormField('body', e.target.value);
         }}
       />
+      {successfulPost ? <p className="success-class">comment posted!</p> : null}
+
       {badInput ? (
         <p className="error-class">failed to post: there was an empty field</p>
       ) : null}
@@ -81,7 +90,11 @@ export const NewCommentForm = ({ article_id, setComments }) => {
       {isPostError ? (
         <p className="error-class">failed to post: apologies try again later</p>
       ) : null}
-      <button>Submit!</button>
+
+      {!isUser ? (
+        <p className="error-class">failed to post: username incorrect</p>
+      ) : null}
+      <button disabled={buttonClicked ? true : false}>Submit!</button>
     </form>
   );
 };
