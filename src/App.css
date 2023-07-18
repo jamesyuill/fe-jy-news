@@ -120,10 +120,13 @@ li{
 
 .votes-comp{
   margin-top: 1rem;
+
   border: 1px solid black;
   background-color: rgb(245, 245, 245);
+  text-align: center;
   padding-left:1rem;
   padding-right:1rem;
+  padding-bottom: 1rem;
   color:black;
 }
 
