@@ -12,6 +12,17 @@ export const Nav = () => {
           <Link to="/articles">All Articles</Link>
         </li>
       </ul>
+      <ul className="topics-list">
+        <li>
+          <Link to="/coding">Coding</Link>
+        </li>
+        <li>
+          <Link to="/football">Football</Link>
+        </li>
+        <li>
+          <Link to="/cooking">Cooking</Link>
+        </li>
+      </ul>
     </nav>
   );
 };

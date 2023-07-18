@@ -149,3 +149,15 @@ li{
 .success-class{
   color:green;
 }
+
+.topics-list{
+  display: flex;
+  flex-direction: row;
+  gap:3rem;
+  
+}
+
+.topics-list li:hover{
+  background-color: rgb(172, 205, 172);
+  color: white;
+}
