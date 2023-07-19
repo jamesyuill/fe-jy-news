@@ -6,15 +6,12 @@ import { getArticleById } from '../utils/api';
 import { VotesComp } from '../components/VotesComp';
 import formatDateTime from '../utils/formatDateTime';
 
-export const ArticlePage = ({
-  isLoading,
-  setIsLoading,
-  isError,
-  setIsError,
-}) => {
+export const ArticlePage = () => {
   const [article, setArticle] = useState({});
   const [dateAndTime, setDateAndTime] = useState({});
   const { article_id } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     getArticleById(article_id)
