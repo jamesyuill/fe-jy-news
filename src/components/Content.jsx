@@ -4,7 +4,9 @@ import { MostRecentArticles } from '../pages/MostRecentArticles';
 import { useEffect, useState } from 'react';
 import { getAllArticles } from '../utils/api';
 import { ArticlePage } from '../pages/ArticlePage';
-import { TopicPage } from '../pages/TopicPage';
+import { CodingPage } from '../pages/CodingPage';
+import { CookingPage } from '../pages/CookingPage';
+import { FootballPage } from '../pages/FootBallPage';
 
 export const Content = () => {
   const [articleList, setArticleList] = useState([]);
@@ -50,9 +52,9 @@ export const Content = () => {
             />
           }
         />
-        <Route path="/coding" element={<TopicPage />} />
-        <Route path="/football" element={<TopicPage />} />
-        <Route path="/cooking" element={<TopicPage />} />
+        <Route path="/coding" element={<CodingPage />} />
+        <Route path="/football" element={<FootballPage />} />
+        <Route path="/cooking" element={<CookingPage />} />
       </Routes>
     </main>
   );
