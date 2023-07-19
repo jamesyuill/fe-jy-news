@@ -1,6 +1,14 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { getAllTopics } from '../utils/api';
 
-export const Nav = () => {
+export const Nav = ({ topics, setTopics }) => {
+  useEffect(() => {
+    getAllTopics().then(({ allTopics }) => {
+      setTopics(allTopics);
+    });
+  }, []);
+
   return (
     <nav className="nav">
       <ul>
@@ -12,15 +20,13 @@ export const Nav = () => {
         </li>
       </ul>
       <ul className="topics-list">
-        <li>
-          <Link to="/coding">Coding</Link>
-        </li>
-        <li>
-          <Link to="/football">Football</Link>
-        </li>
-        <li>
-          <Link to="/cooking">Cooking</Link>
-        </li>
+        {topics.map(({ slug }) => {
+          return (
+            <li key={slug}>
+              <Link to={`/topics/${slug}`}>{slug}</Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
