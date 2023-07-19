@@ -4,13 +4,28 @@ import { getArticlesByTopic } from '../utils/api';
 
 export const FootballPage = () => {
   const [footballArticles, setFootballArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    getArticlesByTopic('football').then(({ articles }) => {
-      setFootballArticles(articles);
-    });
+    getArticlesByTopic('football')
+      .then(({ articles }) => {
+        setFootballArticles(articles);
+        setIsError(false);
+        setIsLoading(false);
+      })
+      .catch(() => {
+        setIsError(true);
+      });
   });
 
+  if (isLoading) {
+    return <p>loading...</p>;
+  }
+
+  if (isError) {
+    return <p>Something went wrong...</p>;
+  }
   return (
     <article className="article-list">
       <h2>Football Articles</h2>

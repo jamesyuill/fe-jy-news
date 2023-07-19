@@ -4,12 +4,28 @@ import { getArticlesByTopic } from '../utils/api';
 
 export const CodingPage = () => {
   const [codingArticles, setCodingArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    getArticlesByTopic('coding').then(({ articles }) => {
-      setCodingArticles(articles);
-    });
+    getArticlesByTopic('coding')
+      .then(({ articles }) => {
+        setCodingArticles(articles);
+        setIsError(false);
+        setIsLoading(false);
+      })
+      .catch(() => {
+        setIsError(true);
+      });
   });
+
+  if (isLoading) {
+    return <p>loading...</p>;
+  }
+
+  if (isError) {
+    return <p>Something went wrong...</p>;
+  }
 
   return (
     <article className="article-list">
