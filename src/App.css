@@ -184,3 +184,20 @@ li{
   color: white;
   display: inline;
 }
+
+.delete-comment{
+  text-align: right;
+
+}
+
+.delete-comment button{
+  background-color: rgb(254, 159, 159);
+  color: black;
+  margin:1rem;
+}
+
+.delete-comment button:hover{
+  background-color: rgb(251, 116, 116);
+  color:white;
+  margin:1rem;
+}
