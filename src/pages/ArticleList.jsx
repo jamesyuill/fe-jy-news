@@ -7,6 +7,8 @@ export const ArticleList = () => {
   const [articleList, setArticleList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const [sortBy, setSortBy] = useState({});
+  console.log(sortBy);
 
   useEffect(() => {
     setIsLoading(true);
@@ -31,7 +33,7 @@ export const ArticleList = () => {
   return (
     <article className="article-list">
       <h2>Article List</h2>
-      <SortComp />
+      <SortComp sortBy={sortBy} setSortBy={setSortBy} />
       <ul>
         {articleList.map((article) => {
           return (
