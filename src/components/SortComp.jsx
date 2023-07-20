@@ -1,19 +1,24 @@
-import { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+export const SortComp = ({ searchParams, setSearchParams }) => {
+  const setSortBy = (query) => {
+    const newParams = new URLSearchParams(searchParams);
+    newParams.set('sort_by', query);
+    setSearchParams(newParams);
+  };
 
-export const SortComp = ({ sortBy, setSortBy }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const setSortOrder = (direction) => {
+    const newParams = new URLSearchParams(searchParams);
+    newParams.set('order', direction);
+    setSearchParams(newParams);
+  };
   return (
     <form action="sortby-form">
       <label htmlFor="sort_by"></label>
       <select
         name="sort_by"
         id="select-sortby"
-        value={searchParams.get('sort_by')}
+        value={searchParams.get('sort_by') || ''}
         onChange={(e) => {
-          setSearchParams((curr) => {
-            return { ...curr, sort_by: e.target.value };
-          });
+          setSortBy(e.target.value);
         }}
       >
         <option value="created_at">Date</option>
@@ -24,11 +29,9 @@ export const SortComp = ({ sortBy, setSortBy }) => {
       <select
         name="order"
         id="select-order"
-        value={searchParams.get('order')}
+        value={searchParams.get('order') || ''}
         onChange={(e) => {
-          setSearchParams((curr) => {
-            return { ...curr, order: e.target.value };
-          });
+          setSortOrder(e.target.value);
         }}
       >
         <option value="asc">Ascending</option>

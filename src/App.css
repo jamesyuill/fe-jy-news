@@ -5,16 +5,33 @@
   padding-right:2rem;
 }
 
+.App{
+  display: grid;
+  grid-template-rows: auto auto auto;
+  position: absolute;
+  top:0;
+  padding-right: 2rem;;
+}
 
 
 
 .header{
+  grid-row: 1;
+  width:87vw;
+  box-sizing: border-box;
+  padding-left:2rem;
   text-align: left;
   background-color: rgb(148, 204, 148);
+  
 }
 
 .nav{
+  grid-row: 2;
   text-align: left;
+}
+
+.content{
+  grid-row: 3;
 }
 
 li{
@@ -148,4 +165,22 @@ li{
 
 .success-class{
   color:green;
+}
+
+.topics-list{
+  display: flex;
+  flex-direction: row;
+  gap:3rem;
+  
+}
+
+.topics-list li:hover{
+  background-color: rgb(172, 205, 172);
+  color: white;
+}
+
+.nav li:hover{
+  background-color: rgb(172, 205, 172);
+  color: white;
+  display: inline;
 }
