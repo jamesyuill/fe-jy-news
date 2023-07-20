@@ -2,8 +2,10 @@ import axios from 'axios';
 
 const api = axios.create({ baseURL: 'https://jy-news.onrender.com/api' });
 
-export const getAllArticles = () => {
-  return api.get(`/articles`).then((res) => res.data);
+export const getAllArticles = (topicName) => {
+  return api
+    .get(`/articles`, { params: { filter_by: topicName } })
+    .then((res) => res.data);
 };
 
 export const getArticleById = (article_id) => {
@@ -18,6 +20,14 @@ export const getMostRecentArticles = () => {
   return api
     .get(`/articles?sort_by=created_at&limit_by=5`)
     .then((res) => res.data);
+};
+
+export const getAllTopics = () => {
+  return api.get(`/topics`).then((res) => res.data);
+};
+
+export const getArticlesByTopic = (topic) => {
+  return api.get(`/articles?filter_by=${topic}`).then((res) => res.data);
 };
 
 export const patchVotesByArticleId = (article_id, newVote) => {
