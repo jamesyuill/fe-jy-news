@@ -7,8 +7,8 @@ import { SortComp } from '../components/SortComp';
 
 export const ArticleList = () => {
   const [articleList, setArticleList] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const { topic } = useParams();
@@ -26,7 +26,7 @@ export const ArticleList = () => {
         setIsLoading(false);
       })
       .catch((err) => {
-        setIsError(true);
+        setError({ err });
       });
   }, [topic, sortByQuery, orderQuery]);
 
@@ -34,8 +34,12 @@ export const ArticleList = () => {
     return <p>loading...</p>;
   }
 
-  if (isError) {
-    return <p>Something went wrong...</p>;
+  if (error) {
+    return (
+      <p>
+        <ErrorComp message={error} />
+      </p>
+    );
   }
 
   return (
