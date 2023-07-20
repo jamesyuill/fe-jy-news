@@ -6,14 +6,19 @@ import { deleteCommentById } from '../utils/api';
 export const CommentCard = ({
   comment: { author, body, created_at, votes, comment_id },
   setComments,
+  comments,
 }) => {
   const { user, setUser } = useContext(UserContext);
   const [isError, setIsError] = useState(false);
 
   const dateAndTime = formatDateTime(created_at);
-
+  let thisComment = comments.filter(
+    (comment) => comment.comment_id === comment_id
+  );
+  console.log(thisComment);
   function handleClick(e) {
     e.preventDefault();
+
     setComments((curr) => {
       return curr.filter((comment) => comment.comment_id !== comment_id);
     });
