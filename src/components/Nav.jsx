@@ -23,7 +23,9 @@ export const Nav = ({ topics, setTopics }) => {
         {topics.map(({ slug }) => {
           return (
             <li key={slug}>
-              <Link to={`/topics/${slug}`}>{slug}</Link>
+              <Link to={`/topics/${slug}?sort_by=created_at&order=asc`}>
+                {slug}
+              </Link>
             </li>
           );
         })}

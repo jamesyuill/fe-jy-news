@@ -9,6 +9,7 @@ export const ArticleCard = ({
     topic,
     created_at,
     comment_count,
+    votes,
   },
 }) => {
   const dateAndTime = formatDateTime(created_at);
@@ -22,6 +23,7 @@ export const ArticleCard = ({
       <p>Topic: {topic}</p>
       <p>Published on: {dateAndTime.date}</p>
       <p>Comment count: {comment_count}</p>
+      <p>Votes: {votes}</p>
     </div>
   );
 };
