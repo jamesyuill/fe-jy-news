@@ -5,10 +5,13 @@ import { useEffect, useState } from 'react';
 import { getArticleById } from '../utils/api';
 import { VotesComp } from '../components/VotesComp';
 import formatDateTime from '../utils/formatDateTime';
+import { ErrorComp } from './ErrorComp';
 
 export const ArticlePage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const [error, setError] = useState(null);
+
   const [article, setArticle] = useState({});
   const [dateAndTime, setDateAndTime] = useState({});
   const { article_id } = useParams();
@@ -22,7 +25,8 @@ export const ArticlePage = () => {
         setDateAndTime(formatDateTime(article.created_at));
       })
       .catch((err) => {
-        setIsError(true);
+        setIsLoading(false);
+        setError({ err });
       });
   }, []);
 
@@ -30,8 +34,12 @@ export const ArticlePage = () => {
     return <p>loading...</p>;
   }
 
-  if (isError) {
-    return <p>Something went wrong...</p>;
+  if (error) {
+    return (
+      <div>
+        <ErrorComp message={error} />
+      </div>
+    );
   }
 
   return (
