@@ -15,7 +15,6 @@ export const CommentCard = ({
   let thisComment = comments.filter(
     (comment) => comment.comment_id === comment_id
   );
-  console.log(thisComment);
   function handleClick(e) {
     e.preventDefault();
 
@@ -24,6 +23,9 @@ export const CommentCard = ({
     });
     deleteCommentById(comment_id).catch((err) => {
       setIsError(true);
+      setComments((curr) => {
+        return [thisComment[0], ...curr];
+      });
     });
   }
 
