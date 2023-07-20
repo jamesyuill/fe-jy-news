@@ -2,7 +2,7 @@
 
 During my time enrolled in the Northcoders Software Development Bootcamp, we spent two weeks creating a news application.
 
-[==check out hosted app here==](http://www.)
+[==check out hosted app here==](https://jy-news-fullstack-project.netlify.app/)
 
 The first week was spent developing the backend, using Node.js, Postgresql, Express and all developed with TDD.
 
