@@ -4,6 +4,7 @@ import { ArticleCard } from '../components/ArticleCard';
 import { getAllArticles } from '../utils/api';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { SortComp } from '../components/SortComp';
+import { ErrorComp } from './ErrorComp';
 
 export const ArticleList = () => {
   const [articleList, setArticleList] = useState([]);

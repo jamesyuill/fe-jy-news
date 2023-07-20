@@ -13,6 +13,7 @@ export const Content = () => {
         <Route path="/articles/:article_id" element={<ArticlePage />} />
 
         <Route path="/topics/:topic" element={<ArticleList />} />
+
         <Route path="*" element={<ErrorComp />} />
       </Routes>
     </main>
