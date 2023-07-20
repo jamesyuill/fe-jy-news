@@ -24,10 +24,6 @@ export const getAllTopics = () => {
   return api.get(`/topics`).then((res) => res.data);
 };
 
-export const getArticlesByTopic = (topic) => {
-  return api.get(`/articles?filter_by=${topic}`).then((res) => res.data);
-};
-
 export const patchVotesByArticleId = (article_id, newVote) => {
   return api
     .patch(`/articles/${article_id}`, { inc_votes: newVote })
