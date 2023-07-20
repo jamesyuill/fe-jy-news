@@ -22,16 +22,6 @@ export const CommentCard = ({
     });
   }
 
-  // useEffect(() => {
-  //   deleteCommentById(comment_id)
-  //     .then(() => {
-  //       console.log('delete worked');
-  //     })
-  //     .catch((err) => {
-  //       setIsError(true);
-  //     });
-  // }, [deleteClicked]);
-
   return (
     <article className="comment-card">
       <p>
@@ -53,6 +43,8 @@ export const CommentCard = ({
           </button>
         </div>
       ) : null}
+
+      {isError ? <p>comment deletion failed: try again later</p> : null}
     </article>
   );
 };
