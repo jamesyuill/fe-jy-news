@@ -2,26 +2,37 @@ import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 export const SortComp = ({ sortBy, setSortBy }) => {
-  // const [searchParams, setSearchParams] = useSearchParams();
-  // console.log(searchParams);
-
+  const [searchParams, setSearchParams] = useSearchParams();
   return (
     <form action="sortby-form">
-      <label htmlFor="select-sortby"></label>
+      <label htmlFor="sort_by"></label>
       <select
-        name="select-sortby"
+        name="sort_by"
         id="select-sortby"
-        value={sortBy}
+        value={searchParams.get('sort_by')}
         onChange={(e) => {
-          setSortBy(e.target.value);
+          setSearchParams((curr) => {
+            return { ...curr, sort_by: e.target.value };
+          });
         }}
       >
-        <option value="date-asc">Date (ascending)</option>
-        <option value="date-desc">Date (descending)</option>
-        <option value="comment-count-asc">Comment Count (ascending)</option>
-        <option value="comment-count-desc">Comment Count (descending)</option>
-        <option value="votes-asc">Votes (ascending)</option>
-        <option value="votes-desc">Votes (descending)</option>
+        <option value="created_at">Date</option>
+        <option value="comment_count">Comment Count</option>
+        <option value="votes">Votes</option>
+      </select>
+      <label htmlFor="order"></label>
+      <select
+        name="order"
+        id="select-order"
+        value={searchParams.get('order')}
+        onChange={(e) => {
+          setSearchParams((curr) => {
+            return { ...curr, order: e.target.value };
+          });
+        }}
+      >
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
       </select>
     </form>
   );
