@@ -45,7 +45,7 @@ export const ArticleList = () => {
 
   return (
     <article className="article-list">
-      <h2>Article List</h2>
+      <h2>{topic ? `${topic}` : 'All Articles'} List</h2>
       <ul>
         {articleList.map((article) => {
           return (
