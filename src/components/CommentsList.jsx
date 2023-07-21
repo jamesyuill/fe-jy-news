@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getCommentsByArticleId } from '../utils/api';
 import { CommentCard } from './CommentCard';
 import { NewCommentForm } from './NewCommentForm';
+import { Expandable } from './Expandable';
 
 export const CommentsList = ({ article_id }) => {
   const [comments, setComments] = useState([]);
@@ -38,7 +39,9 @@ export const CommentsList = ({ article_id }) => {
 
       <ul>
         <li key="newcommentform">
-          <NewCommentForm article_id={article_id} setComments={setComments} />
+          <Expandable>
+            <NewCommentForm article_id={article_id} setComments={setComments} />
+          </Expandable>
         </li>
         {comments.map((comment) => {
           return (

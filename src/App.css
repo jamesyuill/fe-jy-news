@@ -9,7 +9,7 @@
   display: grid;
   grid-template-rows: auto auto auto;
   position: absolute;
-  top:0;
+  top:1rem;
   padding-right: 2rem;;
 }
 
@@ -80,6 +80,13 @@
   padding-right: 2rem;
 }
 
+.article-list li{
+  list-style: none;
+  margin-bottom: 1rem;
+  margin-left: -40px;
+  color: black;
+}
+
 .article-list h2{
   text-transform: capitalize;
 }
@@ -93,6 +100,8 @@
   margin-top: 0.5rem;
   background-color:rgb(245, 245, 245);
 }
+
+
 
 .article-card h3{
   font-size: 0.9rem;
@@ -167,6 +176,7 @@
   width:8rem;
   margin: 0 auto;
   background-color: rgb(148, 204, 148);
+  color:black;
 }
 
 .newcomment-submit-btn:hover{
@@ -176,6 +186,18 @@
   background-color: rgb(117, 163, 117);
 
   color:white;
+}
+
+.expandable-btn{
+  background-color: rgb(148, 204, 148);
+  color:black;
+  margin-bottom: 1rem;
+}
+
+.expandable-btn:hover{
+  background-color: rgb(117, 163, 117);
+  color:white;
+  margin-bottom: 1rem;
 }
 
 .comments-comp li{

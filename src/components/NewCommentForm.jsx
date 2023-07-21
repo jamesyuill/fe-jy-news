@@ -45,9 +45,8 @@ export const NewCommentForm = ({ article_id, setComments }) => {
       postNewComment(article_id, newComment)
         .then((res) => {
           setIsPostError(false);
-          setNewComment({ username: '', body: '' });
           setSuccessfulPost(true);
-          console.log(res);
+          setNewComment({ username: '', body: '' });
         })
         .catch((err) => {
           setIsPostError(true);
@@ -68,6 +67,7 @@ export const NewCommentForm = ({ article_id, setComments }) => {
         value={newComment.username}
         onChange={(e) => {
           setBadInput(false);
+          setSuccessfulPost(false);
           updateFormField('username', e.target.value);
         }}
       />
@@ -78,6 +78,7 @@ export const NewCommentForm = ({ article_id, setComments }) => {
         value={newComment.body}
         onChange={(e) => {
           setBadInput(false);
+          setSuccessfulPost(false);
           updateFormField('body', e.target.value);
         }}
       />
