@@ -44,7 +44,7 @@ export const ArticleList = () => {
 
   return (
     <article className="article-list">
-      <h2>{topic ? `${topic}` : 'All Articles'} List</h2>
+      <h2>{topic ? `Articles about ${topic}` : 'All Articles'}</h2>
       <SortComp searchParams={searchParams} setSearchParams={setSearchParams} />
       <ul>
         {articleList.map((article) => {
