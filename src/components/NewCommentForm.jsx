@@ -94,7 +94,12 @@ export const NewCommentForm = ({ article_id, setComments }) => {
       {!isUser ? (
         <p className="error-class">failed to post: username incorrect</p>
       ) : null}
-      <button disabled={buttonClicked ? true : false}>Submit!</button>
+      <button
+        className="newcomment-submit-btn"
+        disabled={buttonClicked ? true : false}
+      >
+        Submit!
+      </button>
     </form>
   );
 };

@@ -46,7 +46,7 @@ export const CommentCard = ({
               handleClick(e);
             }}
           >
-            delete comment
+            Delete Comment
           </button>
         </div>
       ) : null}

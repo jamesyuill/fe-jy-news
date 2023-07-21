@@ -28,6 +28,7 @@ export const VotesComp = ({ article: { article_id, votes } }) => {
     <div className="votes-comp">
       <p>Votes: {voteClicks + votes}</p>
       <button
+        className="upvote-btn"
         disabled={upVoteClicked ? true : false}
         onClick={() => {
           handleClick(1);
@@ -37,6 +38,7 @@ export const VotesComp = ({ article: { article_id, votes } }) => {
         Up Vote
       </button>
       <button
+        className="downvote-btn"
         disabled={downVoteClicked ? true : false}
         onClick={() => {
           handleClick(-1);

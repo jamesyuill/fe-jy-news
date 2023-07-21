@@ -13,10 +13,14 @@ export const Nav = ({ topics, setTopics }) => {
     <nav className="nav">
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">
+            <span>Home</span>
+          </Link>
         </li>
         <li>
-          <Link to="/articles">All Articles</Link>
+          <Link to="/articles">
+            <span>All Articles</span>
+          </Link>
         </li>
       </ul>
       <ul className="topics-list">
@@ -24,7 +28,7 @@ export const Nav = ({ topics, setTopics }) => {
           return (
             <li key={slug}>
               <Link to={`/topics/${slug}?sort_by=created_at&order=asc`}>
-                {slug}
+                <span>{slug}</span>
               </Link>
             </li>
           );

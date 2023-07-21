@@ -17,7 +17,9 @@ export const ArticleCard = ({
   return (
     <div className="article-card">
       <Link to={`/articles/${article_id}`}>
-        <h3>{title}</h3>
+        <h3>
+          <span className="article-card-span">{title}</span>
+        </h3>
       </Link>
       <img src={article_img_url} alt={title} />
       <p>Topic: {topic}</p>
