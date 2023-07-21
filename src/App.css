@@ -46,6 +46,11 @@
   color: black;
   
 }
+.nav span:focus{
+  background-color: rgb(172, 205, 172);
+  color: black;
+  
+}
 
 .topics-list{
   display: flex;
@@ -57,6 +62,11 @@
 }
 
 .topics-list li:hover{
+  background-color: rgb(172, 205, 172);
+  color: black;
+}
+
+.topics-list li:focus{
   background-color: rgb(172, 205, 172);
   color: black;
 }
@@ -111,13 +121,12 @@
 }
 
 .article-card span:hover{
-  
-  
   background-color: rgb(172, 205, 172);
-  
   }
 
-
+  .article-card span:focus{
+    background-color: rgb(172, 205, 172);
+    }
 
 .article-card img{
   width:7rem;
@@ -188,6 +197,15 @@
   color:white;
 }
 
+.newcomment-submit-btn:focus{
+
+  width:8rem;
+  margin: 0 auto;
+  background-color: rgb(117, 163, 117);
+
+  color:white;
+}
+
 .expandable-btn{
   background-color: rgb(148, 204, 148);
   color:black;
@@ -195,6 +213,12 @@
 }
 
 .expandable-btn:hover{
+  background-color: rgb(117, 163, 117);
+  color:white;
+  margin-bottom: 1rem;
+}
+
+.expandable-btn:focus{
   background-color: rgb(117, 163, 117);
   color:white;
   margin-bottom: 1rem;
@@ -257,6 +281,13 @@ margin-top: 0;
   margin-top: 0;
   }
 
+  .upvote-btn:focus{
+    width:6rem;
+    background-color: rgb(171, 229, 171);
+    margin:0.7rem;
+    margin-top: 0;
+    }
+
 .downvote-btn{
   width:6rem;
   background-color: rgb(245, 149, 149);
@@ -265,6 +296,13 @@ margin-top: 0;
 }
 
 .downvote-btn:hover{
+  width:6rem;
+  background-color: rgb(249, 180, 180);
+  margin:0.7rem;
+  margin-top: 0;
+}
+
+.downvote-btn:focus{
   width:6rem;
   background-color: rgb(249, 180, 180);
   margin:0.7rem;
@@ -309,6 +347,12 @@ margin-top: 0;
 }
 
 .delete-comment button:hover{
+  background-color: rgb(251, 116, 116);
+  color:white;
+  margin-bottom:1rem;
+}
+
+.delete-comment button:focus{
   background-color: rgb(251, 116, 116);
   color:white;
   margin-bottom:1rem;
