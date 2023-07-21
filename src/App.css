@@ -4,6 +4,7 @@
   margin: 0 auto;
   padding-left:2rem;
   padding-right:2rem;
+  color:black;
 }
 
 .App{
@@ -38,11 +39,15 @@
   color: black;
 }
 
-.nav li{
+.nav li {
   list-style: none;
   margin-bottom: 1rem;
   margin-left: -40px;
   color: black;
+}
+
+.nav span{
+  color:black;
 }
 
 .nav span:hover{
