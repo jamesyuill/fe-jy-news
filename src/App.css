@@ -1,5 +1,6 @@
 #root {
-  width: 100vw;
+  width:100%;
+  max-width: 1200px;
   margin: 0 auto;
   padding-left:2rem;
   padding-right:2rem;
@@ -8,15 +9,18 @@
 .App{
   display: grid;
   grid-template-rows: auto auto auto;
+  width:94%;
+  max-width: 1200px;
   position: absolute;
   top:1rem;
-  padding-right: 2rem;;
+  padding-right: 2rem;
 }
 
 
 
 .header{
   grid-row: 1;
+  
   box-sizing: border-box;
   padding-left:2rem;
   padding-right: 2rem;
