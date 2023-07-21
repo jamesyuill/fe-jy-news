@@ -9,7 +9,7 @@
 .App{
   display: grid;
   grid-template-rows: auto auto auto;
-  width:94%;
+  width:90%;
   max-width: 1200px;
   position: absolute;
   top:1rem;
@@ -88,7 +88,7 @@
   text-align: left;
   font-size: 0.7rem;
   
-  border: 2px solid red;
+  border: 2px solid rgb(148, 204, 148);
   border-radius: 8px;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -107,7 +107,7 @@
 
 .article-card{
   text-align: left;
-  border: 1px solid black;
+  border: 2px solid rgb(148, 204, 148);
   border-radius: 8px;
   padding-left: 1rem;
   color:black;
@@ -144,7 +144,7 @@
   padding-left:1rem;
   padding-right:1rem;
   
-  border:1px solid black;
+  border:2px solid rgb(148, 204, 148);
   border-radius: 8px;
   color:black;
 }
@@ -162,6 +162,12 @@
 
 .article-topic{
   font-weight: 600;
+  color:black;
+}
+
+.article-topic:hover{
+  background-color: rgb(148, 204, 148);
+  font-weight: 600;
 }
 
 .article-author{
@@ -175,7 +181,7 @@
 
 .comments-comp{
   margin-top: 1rem;
-  border: 1px solid rgb(0, 0, 0);
+  border: 2px solid rgb(148, 204, 148);
   border-radius: 8px;
   background-color: rgb(245, 245, 245);
   padding-left:1rem;
@@ -213,7 +219,12 @@
 .expandable-btn{
   background-color: rgb(148, 204, 148);
   color:black;
+  width:3rem;
   margin-bottom: 1rem;
+  font-size: 2rem;
+  padding:0.8rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.4rem;
 }
 
 .expandable-btn:hover{
@@ -240,7 +251,7 @@
   padding-left:1rem;
   padding-right:1rem;
   margin:1rem;
-  border:1px solid black;
+  border:2px solid rgb(148, 204, 148);
   border-radius: 8px;
   color:black;
 }
@@ -256,7 +267,7 @@
 .votes-comp{
   margin-top: 1rem;
 
-  border: 1px solid black;
+  border: 2px solid rgb(148, 204, 148);
   border-radius: 8px;
   background-color: rgb(245, 245, 245);
   text-align: center;
@@ -268,49 +279,62 @@
 }
 
 .votes-comp p{
-  font-size: 1.2rem;;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .upvote-btn{
-width:6rem;
+width:7rem;
 background-color: rgb(172, 205, 172);
 margin:0.7rem;
 margin-top: 0;
+font-size: 0.8rem;
+font-weight: 700;
 }
 
 .upvote-btn:hover{
-  width:6rem;
+  width:7rem;
   background-color: rgb(171, 229, 171);
   margin:0.7rem;
   margin-top: 0;
+  font-size: 0.8rem;
+font-weight: 700;
   }
 
   .upvote-btn:focus{
-    width:6rem;
+    width:7rem;
     background-color: rgb(171, 229, 171);
     margin:0.7rem;
     margin-top: 0;
+    font-size: 0.8rem;
+font-weight: 700;
     }
 
 .downvote-btn{
-  width:6rem;
+  width:7rem;
   background-color: rgb(245, 149, 149);
   margin:0.7rem;
   margin-top: 0;
+  font-size: 0.8rem;
+font-weight: 700;
 }
 
 .downvote-btn:hover{
-  width:6rem;
+  width:7rem;
   background-color: rgb(249, 180, 180);
   margin:0.7rem;
   margin-top: 0;
+  font-size: 0.8rem;
+font-weight: 700;
 }
 
 .downvote-btn:focus{
-  width:6rem;
+  width:7rem;
   background-color: rgb(249, 180, 180);
   margin:0.7rem;
   margin-top: 0;
+  font-size: 0.8rem;
+font-weight: 700;
 }
 
 
@@ -321,7 +345,7 @@ margin-top: 0;
   background-color:rgb(245, 245, 245);
   padding:1rem;
   margin:1rem;
-  border:1px solid black;
+  border:2px solid rgb(148, 204, 148);
   border-radius: 8px;
   color:black;
 }
@@ -367,7 +391,7 @@ margin-top: 0;
   padding-left:1rem;
   padding-right:1rem;
   margin:1rem;
-  border:1px solid red;
+  border:2px solid red;
   color: red;
 
 }

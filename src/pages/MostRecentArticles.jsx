@@ -12,6 +12,7 @@ export const MostRecentArticles = () => {
       .then(({ articles }) => {
         setMostRecent5Articles(articles);
         setIsLoading(false);
+        setIsError(false);
       })
       .catch((err) => {
         setIsError(true);

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export const ArticleFull = ({
   article: {
     article_id,
@@ -21,7 +23,10 @@ export const ArticleFull = ({
       </p>
       <p>{body}</p>
       <p>
-        Topic: <span className="article-topic">{topic}</span>
+        Topic:{' '}
+        <Link to={`/topics/${topic}?sort_by=created_at&order=asc`}>
+          <span className="article-topic">{topic}</span>
+        </Link>
       </p>
       <p className="time-date">Published on: {dateAndTime.date}</p>
     </article>

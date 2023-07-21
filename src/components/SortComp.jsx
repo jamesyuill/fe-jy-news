@@ -15,7 +15,7 @@ export const SortComp = ({ searchParams, setSearchParams }) => {
       <label htmlFor="sort_by"></label>
       <select
         name="sort_by"
-        id="select-sortby"
+        id="sort_by"
         value={searchParams.get('sort_by') || ''}
         onChange={(e) => {
           setSortBy(e.target.value);
@@ -28,7 +28,7 @@ export const SortComp = ({ searchParams, setSearchParams }) => {
       <label htmlFor="order"></label>
       <select
         name="order"
-        id="select-order"
+        id="order"
         value={searchParams.get('order') || ''}
         onChange={(e) => {
           setSortOrder(e.target.value);
